@@ -19,17 +19,17 @@ class Pair<T> {
         this.second = second;
     }
 
-    public T getFirst() {
+    T getFirst() {
         return first;
     }
 
-    public T getSecond() {
+    T getSecond() {
         return second;
     }
 }
 
 class ArrayUtils {
-    public static Pair<String> minMax(String[] array) {
+    static Pair<String> minMax(String[] array) {
         if (array == null || array.length == 0) {
             return null;
         }
@@ -48,7 +48,7 @@ class ArrayUtils {
     /**
      * Generic static method
      */
-    public static <T> T getMiddle(T[] array) {
+    static <T> T getMiddle(T[] array) {
         return array[array.length / 2];
     }
 
@@ -56,19 +56,7 @@ class ArrayUtils {
      * Generic static method
      * Bounded type, this is a lower bound. T should be a subtype of Comparable
      */
-    public static <T extends Comparable<T>> T min(T[] array) {
-        T min = array[0];
-
-        for (int i = 1; i < array.length; i++) {
-            if (min.compareTo(array[i]) > 0) {
-                min = array[i];
-            }
-        }
-
-        return min;
-    }
-
-    public static <T extends Comparable<T>> Pair<T> betterMinMax(T[] array) {
+    static <T extends Comparable<T>> Pair<T> betterMinMax(T[] array) {
         if (array == null || array.length == 0) {
             return null;
         }
